@@ -1,4 +1,4 @@
-import { Card, Typography, Box, Button, Grid, CardActions, CardContent, Divider, Container, CardHeader, CardMedia } from "@mui/material"
+import { Card, Typography, Box, Button, Grid, CardActions, CardContent, Divider, Container, CardHeader, CardMedia, Paper } from "@mui/material"
 import background from '../assert/background.png';
 import CardContentPage from "./CardContentPage";
 import Superior from "../assert/Superior.png"
@@ -7,12 +7,19 @@ import StartWith from "../assert/StartWith.png"
 import AdvanceTechnology from "../assert/AdvanceTechnology.png"
 import SignUp from "./SignUp";
 
+const styles = {
+    paperContainer: {
+        backgroundImage:`url(${background})`,
+        color:"#FFFFFF",
+        font:'Roboto'
+    }
+};
 const PageContent = () => {
     return(
-        <Grid item display="grid" xs={6} md={3} style={{ background:"#202E47",  backgroundImage:`url(${background})`}} >
-            {/* <Container  fixed> */}
-    <Card sx={{ minWidth: 275, padding:15}} style={{color:"#FFFFFF", font:'Roboto',background:"#202E47",  backgroundImage:`url(${background})` }}>
-      <CardContent >
+        <Paper style={styles.paperContainer}>
+        <Grid item display="grid" xs={6} md={3} style={{ background:"#202E47"}} >
+    <Card sx={{ minWidth: 275, padding:15}} style={{background:"#202E47" }}>
+      <CardContent style={styles.paperContainer} >
         <Typography sx={{ fontSize: 14 }} gutterBottom>
         TRADE WITH
         </Typography>
@@ -42,7 +49,7 @@ const PageContent = () => {
     <Divider border-width="10"/>
     </div>
     <Grid>
-    <Card sx={{ minWidth: 275, padding:8}} style={{color:"#FFFFFF", font:'Roboto',background:"#202E47",  backgroundImage:`url(${background})` }}>
+    <Card sx={{ minWidth: 275, padding:8}} style={{color:"#FFFFFF",display:"flex", font:'Roboto',background:"#202E47"}}>
       <CardContent >
         <Typography  variant="h3" gutterBottom>
         Why Trade with XM?
@@ -57,7 +64,6 @@ const PageContent = () => {
     <Box >
     <Grid container columns={12} >
   <Grid xs={12} md={5} lg={4} columns={2}>
-    
     <Grid xs={6} lg={3}>
   <CardHeader avatar={
     <CardMedia
@@ -83,7 +89,7 @@ const PageContent = () => {
   </CardHeader> 
   </Grid>
   </Grid>
-  <Grid container columns={6} xs={6} md={7} lg={8}> 
+  <Grid columns={6} xs={6} md={7} lg={8}> 
   <Grid xs={3} lg={3}>
   <CardHeader avatar={
     <CardMedia
@@ -122,6 +128,7 @@ const PageContent = () => {
 
     {/* </Container> */}
     </Grid> 
+    </Paper>
     )
 }
 
