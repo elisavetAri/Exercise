@@ -1,11 +1,19 @@
-import {  Box, Card, CardHeader, CardMedia, Chip, Divider, Grid, Stack, Typography } from "@mui/material";
+import {  Box, Card, CardHeader, CardMedia, Chip, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import Bitcoin from '../assert/Bitcoin.png';
 import Ethereum from '../assert/Ethereum.png'
 import XRP from '../assert/XRP.png'
 import LiteCoin from '../assert/Litecoin.png'
 import BitCoinCash from '../assert/BitcoinCash.png'
+import background from '../assert/background.png';
 
+const styles = {
+  paperContainer: {
+      backgroundImage:`url(${background})`,
+      color:"#FFFFFF",
+      font:'Roboto'
+  }
+};
 
 const CardContentPage = () => {
     const [data, setData] = useState<Data>();
@@ -24,13 +32,13 @@ const liteCoin = data?.data.filter((c)=> c.name === 'Litecoin')
 const biteCoinCash = data?.data.filter((c)=> c.name === 'Bitcoin Cash')
 
 return (
-  <Grid container columns={20}  >
-      <Grid xs={12} md={5} lg={4}>
-<Card sx={{ background:"#A7A7A7",color:"#FFFFFF", height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 204 }}>
-     <Card variant="outlined"  sx={{ background:"#A7A7A7",color:"#FFFFFF", height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 204 }}>
-      <Box sx={{ p: 1 }} >
+  <Paper style={styles.paperContainer}>
+    <div>
+ <Grid container spacing={3} columns={20} style={{ background:"#202E47"}} >
+      <Grid item xs={6} md={5} lg={4} style={{ background:"#202E47"}}  >
+     <Card variant="outlined"  sx={{background:"#A7A7A7",color:"#FFFFFF", height: 150, top:750, left:53, radius: 14.31, border:0.95, maxWidth: 200 }}>
+      <Box  >
         <Stack direction="row" justifyContent="space-between" alignItems="center">
-
 <CardHeader avatar={
   <CardMedia
   component="img"
@@ -51,17 +59,16 @@ return (
         {bitcoin?.map((d)=> d.price_usd)}
         </Typography>
       </Box>
-      <Box sx={{ p: 1 }}>
+      <Box >
         <Typography gutterBottom variant="body2" color="#B1FFC2">
         {bitcoin?.map((d)=> d.percent_change_24h)}
         </Typography>
       </Box>
     </Card>
-    </Card>
     </Grid>
-<Grid xs={12} md={5} lg={4}>
-    <Card variant="outlined" sx={{background:"#A7A7A7",color:"#FFFFFF" , height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 204  }}>
-      <Box sx={{ p: 1 }}>
+<Grid item xs={6} md={5} lg={4} style={{ background:"#202E47"}}>
+    <Card variant="outlined" sx={{background:"#A7A7A7",color:"#FFFFFF" , maxWidth: 200, height: 150, top:750,left:53, radius: 14.31, border:0.95  }}>
+      <Box >
         <Stack direction="row" justifyContent="space-between" alignItems="center">
 
 <CardHeader avatar={
@@ -84,7 +91,7 @@ return (
         {ethereum?.map((d)=> d.price_usd)}
         </Typography>
       </Box>
-      <Box sx={{ p: 1 }}>
+      <Box>
         <Typography gutterBottom variant="body2" color="#FFA3A6" >
         {ethereum?.map((d)=> d.percent_change_24h)}
         </Typography>
@@ -92,10 +99,10 @@ return (
     </Card>
     </Grid>
 
-    <Grid xs={12} md={5} lg={4}>
+    <Grid item xs={6} md={5} lg={4} style={{ background:"#202E47"}}>
     <Card variant="outlined" sx={{ background:"#A7A7A7", color: "#FFFFFF",
- height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 204  }}>
-      <Box sx={{ p: 1 }}>
+ height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 200 }}>
+      <Box>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
 
 <CardHeader avatar={
@@ -125,9 +132,9 @@ return (
       </Box>
     </Card>
     </Grid>
-    <Grid xs={12} md={5} lg={4}>
-    <Card variant="outlined" sx={{background:"#A7A7A7",color: "#FFFFFF", height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 204 }}>
-      <Box sx={{ p: 1 }}>
+    <Grid item xs={6} md={5} lg={4} style={{ background:"#202E47"}}>
+    <Card variant="outlined" sx={{background:"#A7A7A7",color: "#FFFFFF", height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 200 }}>
+      <Box >
         <Stack direction="row" justifyContent="space-between" alignItems="center">
 
 <CardHeader avatar={
@@ -157,9 +164,9 @@ return (
       </Box>
     </Card>
     </Grid>
-    <Grid xs={12} md={5} lg={4}>
-    <Card variant="outlined" sx={{ background:"#A7A7A7",color: "#FFFFFF",height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 204 }}>
-      <Box sx={{ p: 1}}>
+    <Grid item xs={6} md={5} lg={4} style={{ background:"#202E47"}}>
+    <Card variant="outlined" sx={{ background:"#A7A7A7",color: "#FFFFFF",height: 150, top:750,left:53, radius: 14.31, border:0.95, maxWidth: 200 }}>
+      <Box>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
 
 <CardHeader avatar={
@@ -190,7 +197,8 @@ return (
     </Card>
     </Grid>
 </Grid>
-
+</div>
+ </Paper>
 )
 }
 export default CardContentPage

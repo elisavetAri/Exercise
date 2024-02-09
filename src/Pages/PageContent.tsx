@@ -1,11 +1,13 @@
-import { Card, Typography, Box, Button, Grid, CardActions, CardContent, Divider, Container, CardHeader, CardMedia, Paper } from "@mui/material"
+import { Card, Typography, Box, Button, Grid, CardActions, CardContent, Divider, Container, CardHeader, CardMedia, Paper, Skeleton } from "@mui/material"
 import background from '../assert/background.png';
 import CardContentPage from "./CardContentPage";
-import Superior from "../assert/Superior.png"
-import Competitive from "../assert/Competitive.png"
-import StartWith from "../assert/StartWith.png"
-import AdvanceTechnology from "../assert/AdvanceTechnology.png"
-import SignUp from "./SignUp";
+import FastExecusion from "../assert/FastExecusion.png"
+import Competive from "../assert/Competive.png"
+import Tech from "../assert/Tech.png"
+import Dollar from "../assert/Dollar.png"
+import Line from "../assert/Line.png"
+import Registered from "./Registered";
+import Event from "./Event"
 
 const styles = {
     paperContainer: {
@@ -17,7 +19,7 @@ const styles = {
 const PageContent = () => {
     return(
         <Paper style={styles.paperContainer}>
-        <Grid item display="grid" xs={6} md={3} style={{ background:"#202E47"}} >
+    <Grid>
     <Card sx={{ minWidth: 275, padding:15}} style={{background:"#202E47" }}>
       <CardContent style={styles.paperContainer} >
         <Typography sx={{ fontSize: 14 }} gutterBottom>
@@ -41,93 +43,266 @@ const PageContent = () => {
         </Typography>
       </CardContent>
     </Card>
-    <Grid item xs={6} md={3} >
+    </Grid>
+    <Grid item xs={6} md={3}>
       <CardContentPage></CardContentPage>
       </Grid>
-    <Card />
-    <div>
+      <div>
     <Divider border-width="10"/>
     </div>
-    <Grid>
-    <Card sx={{ minWidth: 275, padding:8}} style={{color:"#FFFFFF",display:"flex", font:'Roboto',background:"#202E47"}}>
-      <CardContent >
-        <Typography  variant="h3" gutterBottom>
+    <Grid  >
+    <Card  sx={{ minWidth: 300, padding:10}} style={{color:"#FFFFFF",  maxWidth:"100%",font:'Roboto', background:"#202E47"}}>
+      <CardContent style={{ background:"#202E47", backgroundImage:`url(${background})`}} >
+        <div>
+        <Typography  variant="h3" align="center" gutterBottom style={{ background:"#202E47"}}>
         Why Trade with XM?
         </Typography>
+        </div>
         <Divider color='#29A643'></Divider>
-        <Typography  sx={{ mb: 1.5, padding:3 }} component="div">
+        <Typography  sx={{ mb: 1.5, padding:3 }} component="div" style={{ background:"#202E47"}}>
         We have been providing traders around the world with the same premium experience for over a decade. <br></br>As an industry-leader, we know what the modern trader needs to be successful in the markets.
         </Typography>
       </CardContent>
     </Card>
 
-    <Box >
-    <Grid container columns={12} >
-  <Grid xs={12} md={5} lg={4} columns={2}>
-    <Grid xs={6} lg={3}>
-  <CardHeader avatar={
+    <Grid container direction="row"
+  alignItems="center"
+  justifyContent="center" padding-left={10} sx={{ padding:1}} style={{color:"#FFFFFF", maxWidth:"100%", font:'Roboto', background:"#202E47"}}>
+    <Grid container spacing={2}
+   xs={6}>
+    
+
+      </Grid>
+<Grid container direction="row"
+  // alignItems="center"
+  justifyContent="center" 
+  >
+<Grid container xs={6} style={{color:"#FFFFFF", maxWidth:"100%", font:'Roboto', background:"#202E47"}}>
+
+
+
+</Grid>
+</Grid>
+</Grid>
+
+    </Grid>
+
+<Box sx={{ flexGrow: 1 }}>
+<Grid container spacing={2} style={{background:"#202E47"}}>
+
+  <Grid  item  xs={8} md={6} >
+ <Card  style={{width: "307px",
+height: "450px",
+background: "#0B0819",
+color:"#FFFFFF", 
+top: "1159px",
+left: "93px"
+}}>
+<CardContent>
+<Typography
+          color="#FFFFFF"
+          gutterBottom variant="h5"
+        >
+          Superior Trade Execution
+        </Typography>
+        <img src={Line} style={{margin:"left", display:"flex", padding:"10px"}}>
+        </img>
+        <Typography
+        style={{
+          width: "225px",
+height: "60px",
+top: "1216px",
+left: "145px",
+color:"#FFFFFF",
+font: "Roboto"
+        }}
+          gutterBottom
+        >
+        99% of trades are executed in less than a second, with no requotes or rejections.
+        </Typography>
+</CardContent>
+
+<CardHeader avatar={
     <CardMedia
     component="img"
     width= "31.22px"
-    image={Superior}
+    image={FastExecusion}
  
   />
   }>
   </CardHeader>
-  </Grid>
+      </Card>
   </Grid>
 
-  <Grid xs={8} md={7} lg={8}>
-  <Grid xs={8} lg={3}>
-  <CardHeader avatar={
-    <CardMedia
-    component="img"
-    width= "31.22px"
-    image={Competitive}
-  />
-  }>
-  </CardHeader> 
-  </Grid>
-  </Grid>
-  <Grid columns={6} xs={6} md={7} lg={8}> 
-  <Grid xs={3} lg={3}>
-  <CardHeader avatar={
-    <CardMedia
-    component="img"
-    width= "31.22px"
-    image={AdvanceTechnology}
-  />
-  }>
-  </CardHeader> 
-  </Grid>
-  <Grid xs={3} lg={3}>
-  <CardHeader avatar={
-    <CardMedia
-    component="img"
-    width= "31.22px"
-    image={StartWith}
-  />
-  }>
-  </CardHeader> 
-  </Grid>
-</Grid>
-</Grid>
-  </Box>
 
-  <Grid item xs={3} md={3} >
-  <Typography component="h1" variant="h5">
+  <Grid item  xs={8} md={6}>
+ <Card style={{width:"700px",
+height: "300px",
+top: "1424px",
+left: "1109px",
+background: "#0B0819",
+color:"#FFFFFF"
+}}>
+<CardContent>
+  
+<Typography
+          color="#FFFFFF"
+          gutterBottom variant="h5"
+        >
+          Competitive Pricing
+        </Typography>               
+        <img src={Line} style={{margin:"left", display:"flex", padding:"10px"}}>
+        </img>
+        
+<CardHeader avatar={
+    <CardMedia
+     sx={{  }}
+    style = {{
+      width:" 90px",
+      height:"90px"
+    }}
+    component="img"
+    image={Competive}
+ 
+  />
+  }>
+  </CardHeader>
+        <Typography
+        style={{
+          width: "225px",
+height: "60px",
+top: "1216px",
+left: "145px",
+color:"#FFFFFF",
+font: "Roboto"
+        }}
+          gutterBottom
+        >
+        We offer some of the lowest spreads and we don’t charge commissions.
+        </Typography>
+
+</CardContent>
+      </Card>
+
+ 
+  </Grid>
+  <Grid item xs={6} md={4}>
+ <Card style={{width: "500px",
+height: "279px",
+top: "1444px",
+left: "433px",
+background: "#0B0819",
+color:"#FFFFFF"
+}}>
+  
+<CardHeader avatar={
+    <CardMedia
+    style = {{
+      width:" 90px",
+      height:"90px"
+    }}
+    component="img"
+    image={Tech}
+ 
+  />
+  }>
+  </CardHeader>    
+<CardContent>
+  
+<Typography
+          color="#FFFFFF"
+          gutterBottom variant="h5"
+        >
+          Advanced Technology
+         </Typography>
+                   
+        <img src={Line} style={{margin:"left", display:"flex", padding:"10px"}}>
+        </img>
+        <Typography
+        style={{
+          width: "225px",
+height: "60px",
+top: "1216px",
+left: "145px",
+color:"#FFFFFF",
+font: "Roboto"
+        }}
+          gutterBottom
+        >
+Trade on MT4 or MT5, with expert tools, across desktop, web and mobile.
+        </Typography>
+
+</CardContent>
+      </Card>
+  </Grid>
+  <Grid item xs={6} md={4}>
+ <Card style={{width: "328px",
+height: "285px",
+top: "1444px",
+left: "433px",
+background: "#0B0819",
+color:"#FFFFFF"
+}}>
+<CardContent>
+  
+<Typography
+          color="#FFFFFF"
+          gutterBottom variant="h5"
+        >
+        Start with $5
+         </Typography>
+        
+<CardHeader avatar={
+    <CardMedia
+     sx={{  }}
+    style = {{
+      width:" 90px",
+      height:"90px"
+    }}
+    component="img"
+    image={Dollar}
+ 
+  />
+  }>
+  </CardHeader>               
+        <img src={Line} style={{margin:"left", display:"flex", padding:"10px"}}>
+        </img>
+        <Typography
+        style={{
+          width: "225px",
+height: "60px",
+top: "1216px",
+left: "145px",
+color:"#FFFFFF",
+font: "Roboto"
+        }}
+          gutterBottom
+        >
+Start trading your preferred instruments with as little as a $5 minimum deposit.
+        </Typography>
+
+</CardContent>
+      </Card>
+  </Grid>
+</Grid>
+</Box>
+
+<Grid  padding={10} style={{background:"#202E47"}}>
+<Typography variant="h2">
                   - Register Here -
                   </Typography>
-                  <Typography component="h4" >
+                  <Typography variant="h5">
                   Join us to celebrate our biggest night of the year.
                   </Typography>
-      <SignUp></SignUp>
-      </Grid>
-    </Grid>
+</Grid>
+<Grid container padding={10} style={{ background:"#202E47"}}>
+<Registered></Registered>
 
+</Grid>
 
-    {/* </Container> */}
-    </Grid> 
+<Grid item >
+<Event></Event>
+</Grid>
     </Paper>
     )
 }

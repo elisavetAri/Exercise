@@ -2,7 +2,7 @@ import { Box, Button, Card, CardContent, Grid, Paper, Typography, colors } from 
 import { alignProperty } from '@mui/material/styles/cssUtils';
 import React, { useEffect, useState } from 'react';
 import CardContentPage from './CardContentPage';
-import SignUp from './SignUp';
+import SignUp from './Registered';
 import Header from './Header';
 import PageContent from './PageContent';
 
@@ -17,7 +17,6 @@ const MainPage = () =>{
     </Grid>
   
       <Grid>
-     {/* <SignUp></SignUp> */}
      </Grid>
     </Grid>
 )
